@@ -34,7 +34,8 @@ class Application
     private function getEnvironment()
     {
         if (is_file($this->paths['env_file'])) {
-            Dotenv::load($this->paths['env_file_path']);
+            $dotEnv = new Dotenv($this->paths['env_file_path']);
+            $dotEnv->load();
         }
 
         return getenv('ENVIRONMENT') ?: 'production';
