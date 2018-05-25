@@ -38,6 +38,6 @@ class Application
             $dotEnv->load();
         }
 
-        return getenv('ENVIRONMENT') ?: 'production';
+        return getenv('APP_ENV') ?: 'production';
     }
 }
