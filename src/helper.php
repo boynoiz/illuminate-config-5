@@ -26,11 +26,14 @@ if (! function_exists('config')) {
     function config($key = null, $default = null)
     {
         if (is_null($key)) {
-            return app()->config();
+            echo app()->config();
+            return;
         }
         if (is_array($key)) {
-            return app()->config()->set($key);
+            echo app()->config()->set($key);
+            return;
         }
-        return app()->config()->get($key, $default);
+        echo app()->config()->get($key, $default);
+        return;
     }
 }
